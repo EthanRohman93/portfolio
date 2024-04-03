@@ -1,18 +1,17 @@
-import React from 'react';
 import Link from 'next/link';
 
+const projectIds = ['answer-bot', 'capstone', 'marketing-campaign', 'thesis']; // Defined statically or fetched via props
+
 const ProjectSection = () => (
-  <section>
-    <h2>Projects</h2>
-          <ul>
-      <li>
-        <Link>
-          <a href="/projects/answer-bot">Answer Bot</a>
+  <ul>
+    {projectIds.map(id => (
+      <li key={id}>
+        <Link href={`/projects/${id}`}>
+          <a>{id.replace('-', ' ').toUpperCase()}</a> {/* Example transformation for display */}
         </Link>
       </li>
-      {/* Repeat for other projects */}
-    </ul>
-  </section>
+    ))}
+  </ul>
 );
 
 export default ProjectSection;
