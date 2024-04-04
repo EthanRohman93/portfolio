@@ -1,9 +1,0 @@
-{
-  "title": "Group Senior Project - DoughFlow",
-  "description": "Finance Web Application: Collaborating on a finance web application using a PostgreSQL, Django, and Next.js tech stack, focusing on developing robust backend and frontend components as part of a team project.",
-  "university": "Drake University",
-  "repositoryUrl": "https://github.com/DoughFlow",
-  "additionalInfo": [
-    "Utilized Jira for sprint planning and tracking, and Lucidchart for workflow diagrams."
-  ]
-}
