@@ -11,7 +11,7 @@ const MainPage = () => {
         <h1>Welcome to My Portfolio</h1>
         <EducationSection />
         <PersonalSection />
-        <Link href="/projects">View Projects</Link> {/* Add this line */}
+        <Link href="/project">View Projects</Link> {/* Add this line */}
         {/* Any additional sections can be added here */}
       </main>
     </Layout>
