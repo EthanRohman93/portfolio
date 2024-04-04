@@ -9,6 +9,7 @@ export async function GET() {
 
   const projectNames = filenames.map(filename => filename.replace('.json', ''));
 
+
   return new Response(JSON.stringify(projectNames), {
     headers: {
       'Content-Type': 'application/json',
