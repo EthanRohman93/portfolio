@@ -1,27 +1,31 @@
+"use client";
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Project from '../types/Project';
+import { fetchProjectsAPI } from '../lib/projectsService';
 
-async function getProjects() {
-    const res = await fetch('http://localhost:3000/api/project');
-    const projectNames = await res.json();
-    return projectNames;
-}
+const ProjectsPage: React.FC = () => {
+  const [projects, setProjects] = useState<Project[]>([]);
 
-export default async function ProjectsPage() {
-    const projectNames = await getProjects()
-    console.log(projectNames)
-    return (
-        <div>
-          <h1>Projects</h1>
-          <ul>
-                {projectNames && projectNames.map(name => (
-                    <li key={name}>
-                        <Link href={`/project/${name}`}>
-                            {name}
-                        </Link>
-                    </li>
-                ))}      
-            </ul>
-        </div>
-    );
-}
+  useEffect(() => {
+    fetchProjectsAPI().then(setProjects).catch(console.error);
+  }, []);
+
+  return (
+    <div>
+      <h1>Projects</h1>
+      <ul>
+        {projects.map((project) => (
+          <li key={project.pname}>
+            <Link href={`/project/${project.pname}`}>
+              {project.pname}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default ProjectsPage;
 

@@ -3,7 +3,7 @@ import path from 'path';
 
 const projectsDirectory = path.join(process.cwd(), 'public', 'project');
 
-export async function GET(request) {
+export async function GET(request: Request) {
   const url = new URL(request.url);
   const pname = url.pathname.split('/').pop();
   const filePath = path.join(projectsDirectory, `${pname}.json`);
