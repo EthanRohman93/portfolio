@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Project } from '../types/Project';
-import { getProjectNames } from '../lib/projectsService';
+import { fetchProjectsAPI } from '../lib/projectsService';
 
 const ProjectsPage: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
