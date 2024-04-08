@@ -1,36 +1,22 @@
 import React from 'react';
+import ProjectInfo from "../../components/project/ProjectInfo"
 
-type params = {
-    pname: string;
-    title: string;
-    description: string[];
+type ParamsType = {
+    params: {
+        pname: string;
+    }
+}
+
+export function generateStaticParams() {
+  return [{ pname: 'answer-bot' }, { pname: 'capstone' }]
 }
 
 
-export async function generateStaticParams() {
-    const res = await fetch('http://localhost:3000/api/project/');
-    const pnames = await res.json()
-    return pnames.map((pname) => ({
-        pname: pname.toString()
-    }))
-}
-
-async function getProject(pname) {
-    const res = await fetch(`http://localhost:3000/api/project/${pname}`);
-    const data = await res.json();
-    return data;
-}
-
-
-export default async function ProjectPage ({ params }) {
-    const project = await getProject(params.pname);
-    console.log({project});
-    return (
+const ProjectDetails = ({ params }: ParamsType) => {
+    return ( 
         <div>
-            <h1>{project.title}</h1>
-            {project.description.map((desc, index) => (
-                <p key={index}>{desc}</p>
-            ))}
+            <ProjectInfo pname={params.pname} />
         </div>
-    );
+    )
 }
+export default ProjectDetails;
