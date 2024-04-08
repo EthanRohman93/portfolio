@@ -1,4 +1,4 @@
-import ProjectDisplay from "../components/ProjectDisplay"
+import ProjectDisplay from "../components/project/ProjectDisplay"
 
 export default function Project() {
     return ( 
