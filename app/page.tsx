@@ -8,7 +8,7 @@ const MainPage = () => {
   return (
     <Layout>
       <main>
-        <h1>Welcome to My Portfolio</h1>
+        <h1>Ethan Rohman</h1>
         <EducationSection />
         <PersonalSection />
         <Link href="/project">View Projects</Link> {/* Add this line */}
