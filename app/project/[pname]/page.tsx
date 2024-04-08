@@ -15,7 +15,7 @@ export function generateStaticParams() {
 const ProjectDetails = ({ params }: ParamsType) => {
     return ( 
         <div>
-            <p>Current filename: {params.pname}</p>
+            <ProjectInfo pname={params.pname} />
         </div>
     )
 }

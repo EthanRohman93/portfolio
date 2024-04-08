@@ -7,7 +7,7 @@ type PropsType = {
 }
 
 const ProjectInfo = async ( {pname}: PropsType) => {
-    const filePath = path.join(process.cwd(), 'public', 'project', pname);
+    const filePath = path.join(process.cwd(), 'public', 'project', `${pname}.json`);
     const content = await fs.readFile(filePath, 'utf8');
     
     return (
