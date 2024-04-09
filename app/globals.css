@@ -4,17 +4,17 @@
 
 :root {
   /* Light Mode Colors */
-  --foreground-rgb: 50, 23, 77; /* Dark purple for text */
+  --foreground-rgb: 33, 15, 50; /* Darker purple for text */
   --background-start-rgb: 245, 222, 179; /* Light tan for background start */
-  --background-end-rgb: 245, 222, 179; /* Light tan for background end, adjust if you want a gradient */
+  --background-end-rgb: 245, 222, 179; /* Light tan for background end */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     /* Dark Mode Colors */
     --foreground-rgb: 245, 222, 179; /* Light tan for text */
-    --background-start-rgb: 50, 23, 77; /* Dark purple for background */
-    --background-end-rgb: 50, 23, 77; /* Dark purple for background, adjust if you want a gradient */
+    --background-start-rgb: 33, 15, 50; /* Darker purple for background */
+    --background-end-rgb: 33, 15, 50; /* Darker purple for background */
   }
 }
 
@@ -27,6 +27,12 @@ body {
     )
     rgb(var(--background-start-rgb));
   padding-top: env(safe-area-inset-top);
+}
+
+@media (max-width: 600px) {
+  .safe-top {
+    flex-direction: column;
+  }
 }
 
 @layer utilities {
