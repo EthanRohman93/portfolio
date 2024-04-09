@@ -19,7 +19,13 @@ const Technologies = () => {
         {technologies.map((tech) => (
           <div key={tech.name} className="flex flex-col items-center">
             <div className="bg-white p-2 rounded-md border-4 border-purple-600">
-              <Image src={tech.img} alt={tech.name} width={80} height={80} className="rounded-md" layout="fixed" />
+              <Image 
+                src={tech.img}
+                alt={tech.name}
+                width={80} 
+                height={80} 
+                className="rounded-md" 
+              />
             </div>
             <p className="mt-2">{tech.name}</p>
           </div>

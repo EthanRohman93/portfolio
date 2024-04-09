@@ -9,19 +9,34 @@ const PersonalSection = async () => {
       <div className="flex flex-wrap justify-center gap-4 mt-4">
         <div className="flex flex-col items-center">
           <div className="rounded-md border-4 border-purple-600">
-            <Image src="/images/mountain.jpg" alt="Mountain" width={200} height={200} className="rounded-md" />
+            <Image 
+                src="/images/mountain.jpg" 
+                alt="Mountain" 
+                width={200} 
+                height={200} 
+                className="rounded-md" />
           </div>
           <p className="mt-2">Hiking Adventures</p>
         </div>
         <div className="flex flex-col items-center">
             <div className="rounded-md border-4 border-purple-600">
-                <Image src="/images/bike.jpg" alt="Motorcycle" width={200} height={200} className="rounded-md" />
+                <Image 
+                    src="/images/bike.jpg" 
+                    alt="Motorcycle" 
+                    width={200} 
+                    height={200} 
+                    className="rounded-md" />
             </div>
             <p className="mt-2">Motorcycle Rides</p>
         </div>
         <div className="flex flex-col items-center">
           <div className="rounded-md border-4 border-purple-600">
-            <Image src="/images/bi.jpg" alt="Brandon Ingram" width={200} height={200} className="rounded-md" />
+            <Image 
+                src="/images/bi.jpg"
+                alt="Brandon Ingram"
+                width={200}
+                height={200}
+                className="rounded-md" />
           </div>
           <p className="mt-2">Brandon Ingram</p>
         </div>

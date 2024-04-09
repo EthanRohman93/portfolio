@@ -5,7 +5,10 @@ const HeroDisplay = async () => {
         <div className="flex-1 justify-center items-center rounded-xl overflow-hidden border-4 border-purple-600 mx-auto max-w-md mx-4 my-2">
             <Image
                 src='/images/Hero.jpeg'
-                layout="responsive"
+                style={{
+                    width: '100%',
+                    height: 'auto',
+                }}
                 width={200}
                 height={200}
                 alt='Image of Ethan Rohman'
