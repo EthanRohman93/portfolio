@@ -1,29 +1,29 @@
-'use client'
+'use client';
 import React, { useState, FC } from 'react';
-import RSIPopup from '../components/RSIPopup';
+import RSIPopup from '../components/RSIPopup'; // Ensure the path is correct
 
 const ExperiencePage: FC = () => {
   const [showPopup, setShowPopup] = useState<boolean>(false);
 
+  const popupStyle = "absolute left transform -translate-x-1/2 mt-1"; // Centers the popup below the "RSI" text with a slight margin
+
   return (
-      <div className="p-4" style={{ position: 'relative' }}>
-        <h1 className="text-2xl font-bold">Experience</h1>
-        <div className="mt-4">
+      <div className="relative p-4">
+        <h1 className="text-2xl font-bold">Indicators</h1>
+        <div className="mt-4 relative">
           <h2 
-            className="text-xl font-semibold" 
+            className="text-xl font-semibold cursor-pointer relative" // The "RSI" text is positioned relatively to anchor the absolutely positioned popup
             onMouseEnter={() => setShowPopup(true)} 
             onMouseLeave={() => setShowPopup(false)}
           >
-            Company Name
+            RSI
           </h2>
-          {showPopup && <RSIPopup />}
-          <p className="italic">Role - Dates Employed</p>
-          <ul className="list-disc ml-5 mt-2">
-            <li>Brief description of your role and responsibilities.</li>
-            <li>Another point about your work experience.</li>
-          </ul>
+          {showPopup && (
+            <div className={popupStyle}>
+              <RSIPopup />
+            </div>
+          )}
         </div>
-        {/* Add more experiences as needed */}
       </div>
   );
 };
