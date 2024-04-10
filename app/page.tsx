@@ -7,6 +7,7 @@ import Technologies from './components/Tech';
 import RohmanC from './components/RohmanCorner';
 import HeroDesc from './components/HeroDesc';
 import ProjectsSection from './components/ProjectSection';
+import ExperienceSection from './components/Experience';
 
 const MainPage = () => {
   return (
@@ -21,7 +22,10 @@ const MainPage = () => {
         </div>
         <Technologies />
         <ProjectsSection />
-        <EducationSection />
+        <div className="flex flex-col md:flex-row justify-around items-center space-y-4 md:space-y-0 md:space-x-6 mt-6 max-w-4xl mx-auto">
+            <EducationSection />
+            <ExperienceSection />
+        </div>
         <PersonalSection />
       </main>
     </Layout>

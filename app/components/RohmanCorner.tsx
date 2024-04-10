@@ -2,7 +2,6 @@
 import React from 'react';
 
 const RohmanC: React.FC = () => {
-  // Define the click handler function
   const handleClick = () => {
     window.scrollTo({
       top: 0,
