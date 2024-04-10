@@ -1,48 +1,67 @@
 import React from 'react';
 import Link from 'next/link';
 
+// Define projects data
+const projects = [
+  {
+    title: "Text Message Marketing Campaign Analysis",
+    description: "Analyzed user login and interaction data using Python, Pandas, SQL (with CTEs), and ggplot2. Aimed to measure the effectiveness of a marketing campaign in re-engaging users. Presented findings to over 50 stakeholders, demonstrating campaign success.",
+    type: "work"
+  },
+  {
+    title: "Semantic and Elastic Search Comparison and Improvement",
+    description: "Integrated Hugging Face sentence transformers with Chroma for custom embedding models, compared against ElasticSearch with tuned fuzzy matching. Achieved comparable performance, enhancing search capabilities and user experience.",
+    type: "work"
+  },
+  {
+    title: "Deterministic Answer Bot",
+    description: "Implemented a bot using Hugging Face's models, with MLflow for management and Databricks for hosting. Delivered immediate, reliable customer service responses.",
+    type: "work"
+  },
+  {
+    title: "Data Pipelining",
+    description: "Enhanced large data pipelines with Databricks and Ascend, employing PySpark for data processing and Jenkins for CI/CD, contributing to a substantial codebase.",
+    type: "work"
+  },
+  {
+    title: "DoughFlow",
+    description: "Co-developing a finance web app focused on stock market education and paper trading, using Postgres, Django, and Next.js, with Docker for environment management. Project is in progress.",
+    type: "personal"
+  },
+  {
+    title: "UI/UX Honors Thesis Research Study",
+    description: "Exploring innovative UI/UX methods for web content presentation, utilizing Next.js, Django, and NGINX. Employs data analysis with Pandas and Python to improve web design practices. Currently ongoing.",
+    type: "personal"
+  },
+  {
+    title: "This Portfolio Website",
+    description: "Developed with Next.js and NGINX on an EC2 instance, using Docker for service management. Showcases secure and efficient static site generation and hosting.",
+    type: "personal"
+  }
+];
+
 const ProjectsSection = () => {
   return (
-    <div className="mx-auto max-w-4xl p-4 rounded-xl border-4 border-purple-600">
+    <div className="mx-auto max-w-4xl p-4 rounded-xl border-4 border-purple-600 my-4">
       <h2 className="text-xl font-bold mb-4">Projects</h2>
-
-      <div className="mb-4">
-        <h3 className="text-lg font-bold mb-2">UnitedHealth Group (Surest: A UnitedHealth Care Company)</h3>
-        <p>Data Science Intern | Minneapolis, MN | May 2022 - May 2024</p>
-        <ul className="list-disc ml-6">
-          <li>Data Analysis: Conducted a comprehensive analysis of text message campaigns to assess engagement increases, utilizing Python, Pandas, and SQL for data manipulation and analysis.</li>
-          <li>Machine Learning: Developed a question-answer bot using sentence transformers and built a vector store with a custom embedding model for enhancing search capabilities, managed deployment with MLflow, and fine-tuned chat models for suggesting answers to partial questions.</li>
-          <li>Search Engine Improvement: Designed extension of search feature using embedding models, including building a custom vector store for improved search results and user experience.</li>
-          <li>Interactive Development: Solved for creating and testing with local instances of Elasticsearch to fine-tune search parameters.</li>
-          <li>Data Engineering: Contributed to complex pyspark pipelines in Databricks and Ascend, including interacting with AWS S3, employing GitHub for source control and automation in Jenkins.</li>
-          <li>Presentations: Formally presented findings and projects to groups as large as 40, demonstrating strong communication skills and the ability to translate complex technical details into business insights.</li>
-          <li>Agile Methodologies: Experienced in Agile development methodologies, actively participating in sprints, managing stories in Jira, and utilizing Notion for project documentation and collaboration.</li>
-        </ul>
-      </div>
-
-      <div className="mb-4">
-        <h3 className="text-lg font-bold mb-2">Group Senior Project</h3>
-        <p>Drake University | Current</p>
-        <ul className="list-disc ml-6">
-          <li>Finance Web Application: Collaborating on a finance web application using a PostgreSQL, Django, and Next.js tech stack, focusing on developing robust backend and frontend components as part of a team project. Utilized Jira for sprint planning and tracking, and Lucidchart for workflow diagrams.</li>
-        </ul>
-      </div>
-
-      <div className="mb-4">
-        <h3 className="text-lg font-bold mb-2">Individual Senior Project</h3>
-        <p>Drake University | Current</p>
-        <ul className="list-disc ml-6">
-          <li>UI/UX Study: Conducting a UI/UX study as a solo project, using three web applications (calculator, form submission, informational document) to test various UI/UX components and identify combinations that enhance user experience through methodical testing and analysis. Used Figma for UI/UX design mockups and for prototype testing.</li>
-        </ul>
-      </div>
-
-      <div className="text-center">
-        <Link href="/project" className="text-purple-600 hover:underline">
-            View Projects
+      {projects.map((project, index) => (
+        <div key={index} className="mb-4 p-4 rounded-xl border-4 border-purple-600 mx-4 my-2">
+          <h3 className="text-lg font-bold mb-2">{project.title}</h3>
+          <p className='mb-4'>
+            {project.description}
+          </p>
+          <div className={`flex ${project.type === 'work' ? 'flex-col md:flex-row' : ''} justify-between space-x-0 md:space-x-4 space-y-4 md:space-y-0`}>
+            <p className="flex-1">Type: {project.type.charAt(0).toUpperCase() + project.type.slice(1)}</p>
+          </div>
+        </div>
+      ))}
+      <div className="text-center mt-8">
+        <Link href="/projects" className="text-purple-600 hover:underline">
+          View Project Details
         </Link>
       </div>
-    </div>
-  );
+    </div>  );
 };
 
 export default ProjectsSection;
+
