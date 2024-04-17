@@ -4,16 +4,17 @@ import Image from 'next/image';
 const technologies = [
   { name: 'Huggingface', img: '/images/huggingface.png' },
   { name: 'Django', img: '/images/django.png' },
-  { name: 'Nextjs', img: '/images/Next.png' }, // or '/images/Next.png' if you prefer the PNG version
+  { name: 'Nextjs', img: '/images/Next.png' },
   { name: 'Postgres', img: '/images/postgres.png' },
-  { name: 'AWS', img: '/images/aws.png' }, // Assuming you're using the same image for AWS EC2 and RDS
+  { name: 'AWS', img: '/images/aws.png' },
   { name: 'Databricks', img: '/images/databricks.png' },
   { name: 'Ascend', img: '/images/ascend.jpg' },
+  { name: 'Docker', img: '/images/docker.png' },
 ];
 
 const Technologies = () => {
   return (
-    <div className="w-full py-4">
+    <div className="flex-1 min-w-[300px]">
       <h2 className="text-xl font-bold mb-4 text-center">Technologies</h2>
       <div className="flex flex-wrap justify-center items-center gap-4">
         {technologies.map((tech) => (

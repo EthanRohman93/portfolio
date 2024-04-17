@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 
-const RohmanC: React.FC = () => {
+const RohmanC = () => {
   const handleClick = () => {
     window.scrollTo({
       top: 0,
