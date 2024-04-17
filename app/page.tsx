@@ -9,6 +9,7 @@ import HeroDesc from './components/hero/HeroDesc';
 import ProjectsSection from './components/project/ProjectSection';
 import ExperienceSection from './components/Experience';
 import PortDesc from './components/portfolio/PortfolioDesc';
+import SectionTitle from './components/SectionTitle';
 
 const MainPage = () => {
   return (
@@ -26,6 +27,7 @@ const MainPage = () => {
             <EducationSection />
             <ExperienceSection />
         </div>
+        <SectionTitle title='Relevent Projects' size={3} includeBorder={true} />
         <PortDesc />       
         <ProjectsSection />
         <PersonalSection />
