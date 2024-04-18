@@ -14,7 +14,7 @@ const technologies = [
 
 const Technologies = () => {
   return (
-    <div className="flex-1 min-w-[300px]">
+    <div id='tech' className="flex-1  w-full md:w-auto min-w-[300px]">
       <h2 className="text-xl font-bold mb-4 text-center">Technologies</h2>
       <div className="flex flex-wrap justify-center items-center gap-4">
         {technologies.map((tech) => (

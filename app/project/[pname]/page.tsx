@@ -8,7 +8,7 @@ type ParamsType = {
 }
 
 export function generateStaticParams() {
-  return [{ pname: 'answer-bot' }, { pname: 'capstone' }]
+  return [{ pname: 'doughflow' }, { pname: 'thesis' }, { pname: 'portfolio' }]
 }
 
 

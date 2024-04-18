@@ -3,7 +3,7 @@ import React from "react";
 
 const PersonalSection = async () => {
     return (
-    <div className="mx-auto max-w-4xl p-4 rounded-xl border-4 border-purple-600">
+    <div id="about" className="mx-auto max-w-4xl p-4 rounded-xl border-4 border-purple-600">
       <h2 className="text-xl font-bold mb-4">About Me</h2>
       <p>I genuinely enjoy working on Web Development, Machine Learning, and Data Engineering. Outside of tech, I love being outdoors, whether it&apos;s hiking, riding my motorcycle, lifting weights, or playing basketball. I&apos;m also a big NBA fan, with Brandon Ingram being my current favorite player for his fantastic mid-range skills.</p>
       <div className="flex flex-wrap justify-center gap-4 mt-4">

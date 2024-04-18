@@ -1,67 +1,81 @@
+'use client'
 import React from 'react';
-import Link from 'next/link';
+import ProjectDesc from './ProjectDesc';
 
-// Define projects data
 const projects = [
   {
-    title: "Text Message Marketing Campaign Analysis",
-    description: "Analyzed user login and interaction data using Python, Pandas, SQL (with CTEs), and ggplot2. Aimed to measure the effectiveness of a marketing campaign in re-engaging users. Presented findings to over 50 stakeholders, demonstrating campaign success.",
-    type: "Surest"
+    title: "This Portfolio Website",
+    includeBorder: true,
+    id: "portfolio",
+    content: "Developed with <strong>Next.js</strong> and <strong>NGINX</strong> on an <strong>EC2</strong> instance, using <strong>Docker</strong> containers for streamlined service management and deployment. This setup leverages <strong>HTTPS</strong> for secure connections, with static site generation offering optimized performance across devices. The architecture includes dynamic routing to efficiently handle project pages with code snippets and details, showcasing both flexibility and scalability.",
+    href: "/project/portfolio",
+    linkContent: "View Portfolio Details"
   },
   {
-    title: "Semantic and Elastic Search Comparison and Improvement",
-    description: "Integrated Hugging Face sentence transformers with Chroma for custom embedding models, compared against ElasticSearch with tuned fuzzy matching. Achieved comparable performance, enhancing search capabilities and user experience.",
-    type: "Surest"
+    title: "Text Message Marketing Campaign Analysis",
+    includeBorder: true,
+    id: "marketing-analysis",
+    content: "Analyzed user login and interaction data using <strong>Python</strong>, <strong>Pandas</strong>, <strong>SQL</strong> (with CTEs), and <strong>ggplot2</strong>. Aimed to measure the effectiveness of a marketing campaign in re-engaging users. Presented findings to over 50 stakeholders, demonstrating campaign success.",
+    href: "/project/marketing-analysis",
+    linkContent: "View Marketing Analysis Details"
+  },
+  {
+    title: "Search Comparison and Improvement",
+    includeBorder: true,
+    id: "search",
+    content: "Integrated <strong>Hugging Face</strong> sentence transformers with <strong>Chroma</strong> for custom embedding models, compared against <strong>ElasticSearch</strong> with tuned fuzzy matching. Achieved comparable performance, enhancing search capabilities and user experience.",
+    href: "/project/search",
+    linkContent: "View Search Research Details"
   },
   {
     title: "Deterministic Answer Bot",
-    description: "Implemented a bot using Hugging Face's models, with MLflow for management and Databricks for hosting. Delivered immediate, reliable customer service responses.",
-    type: "Surest"
+    includeBorder: true,
+    id: "answer-bot",
+    content: "Implemented a bot using <strong>Hugging Face</strong>'s models, with <strong>MLflow</strong> for management and <strong>Databricks</strong> for hosting. Delivered immediate, reliable customer service responses.",
+    href: "/project/answer-bot",
+    linkContent: "View Bot Details"
   },
   {
     title: "Data Pipelining",
-    description: "Enhanced large data pipelines with Databricks and Ascend, employing PySpark for data processing and Jenkins for CI/CD, contributing to a substantial codebase.",
-    type: "Surest"
+    includeBorder: true,
+    id: "data-pipelining",
+    content: "Enhanced large data pipelines with <strong>Databricks</strong> and <strong>Ascend</strong>, employing <strong>PySpark</strong> for data processing and <strong>Jenkins</strong> for CI/CD, contributing to a substantial codebase.",
+    href: "/project/data-pipelining",
+    linkContent: "View Pipelining Details"
   },
   {
     title: "DoughFlow",
-    description: "Co-developing a finance web app focused on stock market education and paper trading, using Postgres, Django, and Next.js, with Docker for environment management. Project is in progress.",
-    type: "Personal Project"
+    includeBorder: true,
+    id: "doughflow",
+    content: "Co-developing a finance web app focused on stock market education and paper trading, using <strong>Postgres</strong>, <strong>Django</strong>, and <strong>Next.js</strong>, with <strong>Docker</strong> for environment management. This project is in progress.",
+    href: "/project/doughflow",
+    linkContent: "View DoughFlow Details"
   },
   {
     title: "UI/UX Honors Thesis Research Study",
-    description: "Exploring innovative UI/UX methods for web content presentation, utilizing Next.js, Django, and NGINX. Employs data analysis with Pandas and Python to improve web design practices. Currently ongoing.",
-    type: "Personal Project"
+    includeBorder: true,
+    id: "thesis",
+    content: "Exploring innovative UI/UX methods for web content presentation, utilizing <strong>Next.js</strong>, <strong>Django</strong>, and <strong>NGINX</strong>. Employs data analysis with <strong>Pandas</strong> and <strong>Python</strong> to improve web design practices. Currently ongoing.",
+    href: "/project/thesis",
+    linkContent: "View UI/UX Details"
   },
-  {
-    title: "This Portfolio Website",
-    description: "Developed with Next.js and NGINX on an EC2 instance, using Docker for service management. Showcases secure and efficient static site generation and hosting.",
-    type: "Personal Project"
-  }
 ];
 
-const ProjectsSection = () => {
+
+const ProjectSection = () => {
   return (
-    <div className="mx-auto max-w-4xl p-4 rounded-xl border-4 border-purple-600 my-4">
-      <h2 className="text-xl font-bold mb-4">Projects</h2>
+    <div>
       {projects.map((project, index) => (
-        <div key={index} className="mb-4 p-4 rounded-xl border-4 border-purple-600 mx-4 my-2">
-          <h3 className="text-lg font-bold mb-2">{project.title}</h3>
-          <p className='mb-4'>
-            {project.description}
-          </p>
-          <div className={`flex ${project.type === 'work' ? 'flex-col md:flex-row' : ''} justify-between space-x-0 md:space-x-4 space-y-4 md:space-y-0`}>
-            <p className="flex-1">{project.type.charAt(0).toUpperCase() + project.type.slice(1)}</p>
-          </div>
-        </div>
+        <ProjectDesc
+          key={index}
+          title={project.title}
+          includeBorder={project.includeBorder}
+          id={project.id}
+          content={project.content}
+        />
       ))}
-      <div className="text-center mt-8">
-        <Link href="/project" className="text-purple-600 hover:underline">
-          View Project Details
-        </Link>
-      </div>
-    </div>  );
+    </div>  
+  );
 };
 
-export default ProjectsSection;
-
+export default ProjectSection;
