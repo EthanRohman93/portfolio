@@ -5,19 +5,23 @@ import EthanIcon from './EthanIcon';
 import NavBarR from './NavBarR';
 
 const CornerIcon = () => {
-    const [showRohman, setShowRohman] = useState(window.scrollY > 0);
+    const [showRohman, setShowRohman] = useState(false);
     const [showNavBar, setShowNavBar] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setShowRohman(window.scrollY > 0);
-        };
+        // Ensure window is defined before using it
+        if (typeof window !== 'undefined') {
+            const handleScroll = () => {
+                setShowRohman(window.scrollY > 0);
+            };
 
-        window.addEventListener('scroll', handleScroll);
+            window.addEventListener('scroll', handleScroll);
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+            // Ensure to cleanup on component unmount
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            };
+        }
     }, []);
 
     return (
