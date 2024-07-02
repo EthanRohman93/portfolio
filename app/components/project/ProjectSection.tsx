@@ -47,9 +47,9 @@ const projects = [
     title: "DoughFlow",
     includeBorder: true,
     id: "doughflow",
-    content: "Co-developing a finance web app focused on stock market education and paper trading, using <strong>Postgres</strong>, <strong>Django</strong>, and <strong>Next.js</strong>, with <strong>Docker</strong> for environment management. This project is in progress.",
-//    href: "/project/doughflow",
-    linkContent: "View DoughFlow Details"
+    content: "Co-developing a finance web app focused on stock market education and paper trading, using <strong>Postgres</strong>, <strong>Django</strong>, and <strong>Next.js</strong>, with <strong>Docker</strong> for environment management.",
+    href: "dough-flow.com",
+    linkContent: "DoughFlow"
   },
   {
     title: "UI/UX Honors Thesis Research Study",
